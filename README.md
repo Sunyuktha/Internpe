@@ -1,19 +1,25 @@
-# 🎯 InternPE Internship – Week 1 Task 1  
-## 📺 Netflix Clone Website (Frontend)
+# 🔢 Calculator Web App
 
-This project is part of **Week 1 – Task 1** of my **InternPE Web Development Internship**.  
-I built a responsive **Netflix Clone Landing Page** using **HTML** and **CSS**, mimicking the official Netflix homepage design.
+This is a simple and fully functional **Calculator** web application built as part of **InternPe Internship – Week 1 Task 1**. The calculator performs basic arithmetic operations and is styled with HTML and CSS.
 
 ---
 
-## 💡 Features
+## 📌 Task Details
 
-- ✅ Fully responsive layout
-- 🎥 Hero section with call-to-action email input
-- 🧩 Sections showcasing Netflix features with images and text
-- ❓ Interactive FAQ (accordion-style)
-- 🔗 Footer with multiple helpful links
-- 💎 Clean and structured HTML & CSS
+**Internship Program:** InternPe  
+**Task Name:** Week 1 - Task 1  
+**Project:** Basic Calculator using HTML, CSS, and JavaScript  
+**Intern:** Sunyuktha Ravichandran
+
+---
+
+## ✨ Features
+
+- Addition, Subtraction, Multiplication, and Division
+- Clear (AC) and Delete (DEL) functions
+- Decimal support
+- Responsive UI with interactive buttons
+- Clean and modern design
 
 ---
 
@@ -21,6 +27,11 @@ I built a responsive **Netflix Clone Landing Page** using **HTML** and **CSS**, 
 
 - HTML5  
 - CSS3  
-- Responsive Web Design Principles
+- JavaScript
 
 ---
+
+🧑‍💻 Author
+Sunyuktha Ravichandran
+🔗 LinkedIn
+💻 GitHub
