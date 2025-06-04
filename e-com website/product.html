@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products - Sunshine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Sticky Offer Banner -->
+  <div class="sticky-offer">
+    ✨ 50% OFF on First Order - Use Code <strong>SUN50</strong> ✨
+  </div>
+  
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">🌞 Sunshine</div>
+      <nav class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./product.html">Products</a>
+        <a href="./cart.html">Cart</a>
+        <a href="./login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Products Section -->
+  <section class="new-arrivals">
+    <h2 class="section-title">👗 Our Collections</h2>
+    <div class="product-grid">
+
+      <!-- Repeat these cards with different info -->
+      <div class="product-card">
+        <img src="./product/floral.jpeg" alt="Product 1">
+        <h3>Floral Pink Dress</h3>
+        <p>Elegant floral pink dress, perfect for casual outings.</p>
+        <p><strong>₹1,299</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/white.jpeg" alt="Product 2">
+        <h3>White Lace Top</h3>
+        <p>Chic white lace top for summer vibes.</p>
+        <p><strong>₹799</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/designer kurti.jpeg" alt="Product 3">
+        <h3>Designer Kurti</h3>
+        <p>Trendy kurti with Indian embroidery patterns.</p>
+        <p><strong>₹999</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/blue.jpeg" alt="Product 4">
+        <h3>Pastel Blue Gown</h3>
+        <p>Classy pastel gown with soft fabric flow.</p>
+        <p><strong>₹2,199</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/yellow.jpeg" alt="Product 5">
+        <h3>Yellow Midi Dress</h3>
+        <p>Bright and playful yellow midi dress for sunny days.</p>
+        <p><strong>₹1,499</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/rufffle.jpeg" alt="Product 6">
+        <h3>Ruffle Sleeve Blouse</h3>
+        <p>Elegant blouse with ruffle sleeves in soft peach tone.</p>
+        <p><strong>₹699</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/boho.jpeg" alt="Product 7">
+        <h3>Boho Maxi Dress</h3>
+        <p>Bohemian maxi dress with a free-flowing style.</p>
+        <p><strong>₹1,799</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/rose.jpeg" alt="Product 8">
+        <h3>Rose Gold Tunic</h3>
+        <p>Glamorous rose gold tunic perfect for festive evenings.</p>
+        <p><strong>₹1,299</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/cotton.jpeg" alt="Product 9">
+        <h3>Cotton Anarkali</h3>
+        <p>Traditional cotton anarkali suit with beautiful flares.</p>
+        <p><strong>₹1,999</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/black.jpeg" alt="Product 10">
+        <h3>Black Party Dress</h3>
+        <p>Sleek black dress for an unforgettable night out.</p>
+        <p><strong>₹2,499</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/beige.jpeg" alt="Product 11">
+        <h3>Beige Formal Dress</h3>
+        <p>Modern beige dress ideal for office and events.</p>
+        <p><strong>₹1,699</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="./product/lehenga.jpeg" alt="Product 12">
+        <h3>Embroidered Lehenga</h3>
+        <p>Designer lehenga with intricate golden thread work.</p>
+        <p><strong>₹3,499</strong></p>
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+    </div>
+  </section>
+
+   <script>
+  // Initialize cart if not present
+  let cart = JSON.parse(localStorage.getItem("sunshineCart")) || [];
+
+  // Select all add to cart buttons
+  const addToCartButtons = document.querySelectorAll(".product-card .btn:first-of-type");
+
+  addToCartButtons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      const card = btn.parentElement;
+      const name = card.querySelector("h3").innerText;
+      const price = card.querySelector("strong").innerText.replace("₹", "");
+      const img = card.querySelector("img").src;
+
+      // Create product object
+      const product = {
+        name: name,
+        price: parseInt(price),
+        img: img,
+        quantity: 1
+      };
+
+      // Check if item already exists in cart
+      const existing = cart.find(item => item.name === product.name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+
+      // Update localStorage
+      localStorage.setItem("sunshineCart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    });
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Sunshine. Crafted with care for women’s fashion.</p>
+  </footer>
+
+</body>
+</html>

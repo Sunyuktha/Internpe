@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart - Sunshine</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .payment-form {
+      display: none;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fffaf0;
+      border: 2px solid #f9c5d1;
+      border-radius: 12px;
+    }
+
+    .payment-form h3 {
+      margin-bottom: 10px;
+      color: #d94f6d;
+    }
+
+    .payment-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .payment-form button {
+      background-color: #d94f6d;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .success-msg {
+      text-align: center;
+      color: green;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sticky Offer Banner -->
+<div class="sticky-offer">
+  ✨ 50% OFF on First Order - Use Code <strong>SUN50</strong> ✨
+</div>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">🌞 Sunshine</div>
+    <nav class="navbar">
+      <a href="./index.html">Home</a>
+      <a href="./product.html">Products</a>
+      <a href="./cart.html">Cart</a>
+      <a href="./login.html">Login</a>
+    </nav>
+  </div>
+</header>
+
+<section class="cart-section">
+  <h2 class="section-title">🛒 Your Cart</h2>
+  <div id="cartItems" class="product-grid"></div>
+  <h3 id="totalAmount" style="text-align:center; margin-top: 20px;">Total: ₹0</h3>
+</section>
+
+<!-- Payment Form -->
+<div class="payment-form" id="paymentForm">
+  <h3>Payment Details</h3>
+  <form id="payNowForm">
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="text" placeholder="Card Number" required />
+    <input type="text" placeholder="CVV" required />
+    <input type="text" placeholder="Address" required />
+    <button type="submit">Make Payment</button>
+  </form>
+  <div id="successMsg" class="success-msg"></div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2025 Sunshine. All rights reserved.</p>
+</footer>
+
+<script>
+  const cartItemsContainer = document.getElementById("cartItems");
+  const paymentForm = document.getElementById("paymentForm");
+  const successMsg = document.getElementById("successMsg");
+  let cart = JSON.parse(localStorage.getItem("sunshineCart")) || [];
+
+  function renderCart() {
+    cartItemsContainer.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = "<p style='text-align:center;'>Your cart is empty.</p>";
+      document.getElementById("totalAmount").innerText = "Total: ₹0";
+      return;
+    }
+
+    cart.forEach((item, index) => {
+      total += item.price * item.quantity;
+
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <h3>${item.name}</h3>
+        <p>Price: ₹${item.price}</p>
+        <p>Quantity: ${item.quantity}</p>
+        <button onclick="removeItem(${index})" class="btn">Remove</button>
+        <button onclick="showPaymentForm()" class="btn">Buy Now</button>
+      `;
+      cartItemsContainer.appendChild(card);
+    });
+
+    document.getElementById("totalAmount").innerText = `Total: ₹${total}`;
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("sunshineCart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  function showPaymentForm() {
+    paymentForm.style.display = "block";
+    window.scrollTo({ top: paymentForm.offsetTop, behavior: "smooth" });
+  }
+
+  document.getElementById("payNowForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    localStorage.removeItem("sunshineCart");
+    cart = [];
+    renderCart();
+    paymentForm.style.display = "none";
+    successMsg.innerText = "✅ Payment Successful! Thank you for shopping at Sunshine 🌞";
+  });
+
+  renderCart();
+</script>
+
+</body>
+</html>
