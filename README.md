@@ -29,12 +29,11 @@ This is a simple and fully functional **Calculator** web application built as pa
 - CSS3  
 - JavaScript
 
----
+
 🌞 Sunshine – Women’s Fashion E-Commerce Website
 Welcome to Sunshine, an elegant and modern E-Commerce Website designed exclusively for women’s fashion. This project was created as part of InternPe Internship – Week 2 Task to showcase full front-end development using HTML, CSS, and JavaScript.
 
 📌 Task Details
-🎓 Internship Program: InternPe
 
 🗂️ Task: Week 2 - Task 2
 
@@ -61,6 +60,29 @@ HTML5 – Semantic structure
 CSS3 – Stylish and responsive design
 
 JavaScript – Cart functionality, dynamic content interactions
+
+# 📝 TO-DO List App
+
+A simple and responsive **TO-DO List Web Application** built using **HTML, CSS, and JavaScript**. This project was developed as part of **Week 3 - Task 3** for the **InternPe Web Development Internship**.
+
+## 🚀 Features
+
+- ➕ Add new tasks
+- ✅ Mark tasks as completed
+- ❌ Delete tasks
+- 💾 Data stored dynamically (can extend with localStorage)
+- 📱 Responsive UI
+
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
+---
+
+
 
 
 🧑‍💻 Author
