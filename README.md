@@ -78,12 +78,38 @@ A simple and responsive **TO-DO List Web Application** built using **HTML, CSS, 
 
 - HTML5
 - CSS3
-- JavaScript (ES6)
+- JavaScript 
+
+---
+# 🎮 Connect Four Game
+
+This is a simple **Connect Four Game** built using **HTML, CSS, and JavaScript** as part of **Week 4 - Web Development Internship Task** by **InternPe**.
 
 ---
 
+## 📌 Features
+- 🔴🟡 2-player turn-based game
+- ✅ Win detection (horizontal, vertical, diagonal)
+- 🔁 Restart option
+- 🎨 Clean and responsive design
 
+---
 
+## 💻 Technologies Used
+- HTML5
+- CSS3
+- JavaScript 
+
+---
+
+## 📽️ Task Description
+As part of **Week 4** task for InternPe internship, I developed a **Connect Four Game** using core web development skills. The task involved:
+- Creating the board UI
+- Implementing logic for disc dropping and win detection
+- Styling the interface responsively
+- Recording a short demo and posting it on LinkedIn
+
+---
 
 🧑‍💻 Author
 Sunyuktha Ravichandran
